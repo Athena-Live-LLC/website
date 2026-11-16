@@ -184,8 +184,14 @@ main::before {
 
 .compact-hero h1 {
   max-width: 52rem;
-  font-size: clamp(3.1rem, 9vw, 6.4rem);
-  line-height: 0.95;
+  font-size: clamp(2.9rem, 7vw, 5.4rem);
+  line-height: 1;
+}
+
+.hero:not(.compact-hero) h1 {
+  max-width: 58rem;
+  font-size: clamp(3.2rem, 8vw, 6.3rem);
+  line-height: 0.98;
 }
 
 .eyebrow {
@@ -257,8 +263,9 @@ h3 {
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: clamp(2.8rem, 11vw, 4rem);
+  .hero:not(.compact-hero) h1,
+  .compact-hero h1 {
+    font-size: clamp(2.6rem, 11vw, 4rem);
   }
 
   .architecture-components > div {
@@ -337,6 +344,7 @@ h3 {
   overflow: hidden;
   overflow-wrap: anywhere;
   transition: border-color 0.24s ease, box-shadow 0.24s ease;
+  scroll-margin-top: 7rem;
 }
 
 .card:hover,
